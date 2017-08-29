@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>梦三国</title>
+    <link rel="stylesheet" type="text/css" href="./static/css/style.css">
+    <script type="text/javascript" src="./static/js/jquery-3.0.0.min.js">
+    </script>
+
+    <style>
+        @media screen and (max-width:1320px) {
+            .header_middle {
+                display: none;
+            }
+        }
+        
+        .header {
+            width: 100%;
+            height: 41px;
+            min-width: 1000px;
+            box-sizing: border-box;
+            padding-right: 170px;
+            position: relative;
+        }
+        
+        .header:after {
+            clear: both;
+            content: '.';
+            display: block;
+            width: 0;
+            height: 0;
+            visibility: hidden;
+        }
+        
+        .header_left,
+        .header_middle {
+            float: left;
+        }
+        
+        .header_left {
+            width: 267px;
+            height: 100%;
+            margin-left: 180px;
+        }
+        
+        .header_middle {
+            margin-left: 60px;
+        }
+        
+        .header_left img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .header_middle img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .header_right {
+            float: right;
+            position: absolute;
+            right: 190px;
+        }
+        
+        .header_right ul li {
+            float: left;
+            line-height: 41px;
+            margin: 0 5px;
+        }
+        
+        .leftSide {
+            width: 197px;
+            height: 2105px;
+            background: url('./static/images/slidebg.jpg') no-repeat;
+            position: relative;
+        }
+        
+        .leftSideInner {
+            width: 100%;
+            height: 100%;
+            background: #232731;
+            opacity: 0.9
+        }
+        
+        .lf_sanguoLogo {
+            width: 100%;
+            height: 175px;
+        }
+        
+        .lf_download {
+            width: 100%;
+            height: 135px;
+        }
+        
+        .lf_fourBtn {
+            width: 100%;
+            height: 132px;
+        }
+        
+        .lf_fourBtn li {
+            float: left;
+            width: 98px;
+            height: 66px;
+        }
+        
+        .lf_fourBtn li:nth-child(1) {
+            background: url('./static/images/slide-sprite.png') no-repeat;
+        }
+        
+        .lf_fourBtn li:nth-child(1):hover {
+            background: url('./static/images/slide-sprite.png') 0 -132px no-repeat;
+        }
+        
+        .lf_fourBtn li:nth-child(2) {
+            background: url('./static/images/slide-sprite.png') -98px 0 no-repeat;
+        }
+        
+        .lf_fourBtn li:nth-child(2):hover {
+            background: url('./static/images/slide-sprite.png') -98px -132px no-repeat;
+        }
+        
+        .lf_fourBtn li:nth-child(3) {
+            background: url('./static/images/slide-sprite.png') 0 -66px no-repeat;
+        }
+        
+        .lf_fourBtn li:nth-child(3):hover {
+            background: url('./static/images/slide-sprite.png') 0 -198px no-repeat;
+        }
+        
+        .lf_fourBtn li:nth-child(4) {
+            background: url('./static/images/slide-sprite.png') -98px -66px no-repeat;
+        }
+        
+        .lf_fourBtn li:nth-child(4):hover {
+            background: url('./static/images/slide-sprite.png') -98px -198px no-repeat;
+        }
+        
+        .lf_list {
+            width: 100%;
+            height: auto;
+            border-top: 1px solid #2F3441
+        }
+        
+        .lf_list li {
+            width: 100%;
+            height: 48px;
+            border-bottom: 1px solid #2F3441
+        }
+        
+        .lf_list li:nth-child(1) {
+            background: url('./static/images/nav-sprite.png') 25px 0 no-repeat;
+        }
+        
+        .lf_list li:nth-child(1):hover {
+            background: url('./static/images/nav-sprite.png') -155px 0 no-repeat;
+        }
+        
+        .lf_list li:nth-child(2) {
+            background: url('./static/images/nav-sprite.png') 25px -45px no-repeat;
+        }
+        
+        .lf_list li:nth-child(2):hover {
+            background: url('./static/images/nav-sprite.png') -155px -45px no-repeat;
+        }
+        
+        .lf_list li:nth-child(3) {
+            background: url('./static/images/nav-sprite.png') 25px -90px no-repeat;
+        }
+        
+        .lf_list li:nth-child(3):hover {
+            background: url('./static/images/nav-sprite.png') -155px -90px no-repeat;
+        }
+        
+        .lf_list li:nth-child(4) {
+            background: url('./static/images/nav-sprite.png') 25px -135px no-repeat;
+        }
+        
+        .lf_list li:nth-child(4):hover {
+            background: url('./static/images/nav-sprite.png') -155px -135px no-repeat;
+        }
+        
+        .lf_list li:nth-child(5) {
+            background: url('./static/images/nav-sprite.png') 25px -182px no-repeat;
+        }
+        
+        .lf_list li:nth-child(5):hover {
+            background: url('./static/images/nav-sprite.png') -155px -182px no-repeat;
+        }
+        
+        .lf_list li:nth-child(6) {
+            background: url('./static/images/nav-sprite.png') 25px -227px no-repeat;
+        }
+        
+        .lf_list li:nth-child(6):hover {
+            background: url('./static/images/nav-sprite.png') -155px -227px no-repeat;
+        }
+        
+        .lf_list li:nth-child(7) {
+            background: url('./static/images/nav-sprite.png') 25px -273px no-repeat;
+        }
+        
+        .lf_list li:nth-child(7):hover {
+            background: url('./static/images/nav-sprite.png') -155px -273px no-repeat;
+        }
+        
+        .lf_list li:nth-child(8) {
+            background: url('./static/images/nav-sprite.png') 25px -319px no-repeat;
+        }
+        
+        .lf_list li:nth-child(8):hover {
+            background: url('./static/images/nav-sprite.png') -155px -319px no-repeat;
+        }
+        
+        .lf_ourlogo {
+            width: 170px;
+            height: 280px;
+            margin: 17px auto;
+            background: url('./static/images/slide-sprite.png') no-repeat -200px 0;
+            box-sizing: border-box;
+            padding: 22px 28px 0 28px;
+        }
+        
+        .lf_ourlogo li {
+            width: 45px;
+            height: 45px;
+            float: left;
+            margin-bottom: 36px;
+            position: relative;
+        }
+        
+        .lf_ourlogo li p {
+            position: absolute;
+            top: 48px;
+            color: #9198A9;
+            white-space: nowrap;
+        }
+        
+        .lf_ourlogo li:nth-child(even) {
+            margin-left: 20px;
+        }
+        
+        .lf_serviceCenter {
+            width: 170px;
+            height: 324px;
+            background: url('./static/images/slide-sprite.png') -419px 0 no-repeat;
+            margin: 0 auto;
+            position: relative;
+            color: #9198A9;
+            box-sizing: border-box;
+            padding-top: 136px;
+        }
+        
+        .lf_serviceCenter p {
+            text-align: center;
+            padding-left: 20px;
+            display: block;
+        }
+        
+        .lf_serviceCenter ul {
+            margin-top: 40px;
+            padding-left: 30px;
+        }
+        
+        .lf_serviceCenter ul li {
+            list-style: disc;
+            float: left;
+            width: 50%;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        
+        .lf_serviceCenter ul li:hover {
+            color: #05867F
+        }
+        
+        .lf_serviceCenter span {
+            position: absolute;
+            bottom: 10px;
+            margin: 0 auto;
+            display: inline-block;
+            color: white;
+            left: 58px;
+        }
+        
+        .wrap {
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+            background: url('./static/images/indexbg1.jpg') no-repeat;
+            position: absolute;
+            top: 41px;
+            left: 197px;
+            box-sizing: border-box;
+            padding: 309px 0 0 36px;
+        }
+        
+        .newsWrap,
+        .hotEventsWrap,
+        .kongfuWrap {
+            width: 860px;
+            height: 266px;
+            position: relative;
+        }
+        
+        .kongfuWrap {
+            margin-top: 66px;
+        }
+        
+        .news,
+        .banner,
+        .kongfu {
+            width: 424px;
+            height: 266px;
+            float: left;
+            box-sizing: border-box;
+            border: 1px solid #C5C5C5;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .more1,
+        .more2 {
+            width: 206px;
+            height: 263px;
+            border: 1px solid #C5C5C5;
+            float: left;
+            box-sizing: border-box;
+            margin-left: 12px;
+        }
+        
+        .news {
+            position: relative;
+            background: url('./static/images/b_20170829015935aiw1.jpg')
+        }
+        
+        .icon {
+            position: absolute;
+            width: 300px;
+            height: 40px;
+            top: -45px;
+        }
+        
+        .banner {
+            margin-left: 12px;
+        }
+        
+        .hotEventsWrap {
+            margin-top: 66px;
+        }
+        
+        .hotEvents,
+        .eyes {
+            width: 424px;
+            height: 266px;
+            float: left
+        }
+        
+        .eyes {
+            margin-left: 12px;
+        }
+        
+        .hotEvents ul li,
+        .eyes ul li {
+            display: inline-block;
+            width: 206px;
+            height: 126px;
+            box-sizing: border-box;
+            border: 2px solid #C5C5C5;
+            text-align: center;
+        }
+        
+        .hotEvents ul li:nth-child(odd),
+        .eyes ul li:nth-child(odd) {
+            margin-right: 8px;
+        }
+        
+        .hotEvents ul li:nth-child(3),
+        .eyes ul li:nth-child(3) {
+            margin-top: 10px;
+        }
+        
+        .videoCenter {
+            width: 860px;
+            height: 257px;
+            position: relative;
+            margin-top: 66px;
+            border: 1px solid #C5C5C5
+        }
+        
+        .heroWeek {
+            width: 860px;
+            height: 267px;
+            position: relative;
+            margin-top: 66px;
+            border: 1px solid #C5C5C5
+        }
+        
+        .hotEvents ul li:nth-child(1) {
+            background: url('./static/images/b_20170731043338nqm8.jpg')
+        }
+        
+        .hotEvents ul li:nth-child(2) {
+            background: url('./static/images/b_201707111139299re2.jpg')
+        }
+        
+        .hotEvents ul li:nth-child(3) {
+            background: url('./static/images/b_20170817103252mf2i.jpg')
+        }
+        
+        .hotEvents ul li:nth-child(4) {
+            background: url('./static/images/b_201708181030111xtg.jpg')
+        }
+        
+        .eyes ul li:nth-child(1) {
+            background: url('./static/images/multi-media.jpg');
+            position: relative;
+        }
+        
+        .eyes ul li:nth-child(2) {
+            background: url('./static/images/multi-media.jpg') 0 -130px;
+            position: relative;
+        }
+        
+        .eyes ul li:nth-child(3) {
+            background: url('./static/images/multi-media.jpg') 0 -260px;
+            position: relative;
+        }
+        
+        .eyes ul li:nth-child(4) {
+            background: url('./static/images/multi-media.jpg') 0 -390px;
+            position: relative;
+        }
+        
+        .line {
+            width: 170px;
+            height: 1px;
+            margin: 0 auto;
+            position: relative;
+            border-bottom: 1px solid #C5C5C5;
+            box-sizing: border-box;
+            bottom: -105px;
+        }
+        
+        .dot {
+            width: 13px;
+            height: 13px;
+            position: absolute;
+            bottom: 10px;
+            background: url('./static/images/dot.png');
+            left: 10px;
+        }
+        
+        .more1,
+        .more2 {
+            opacity: 0.8;
+        }
+        
+        .more1:hover,
+        .more2:hover {
+            opacity: 1;
+        }
+        
+        .more1 {
+            background: url('./static/images/cd1612.jpg')
+        }
+        
+        .more2 {
+            background: url('./static/images/match17.jpg')
+        }
+        
+        .heroWeek ul li {
+            float: left;
+            height: 267px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .heroWeek ul li:nth-child(1) {
+            width: 212px;
+            background: url('./static/images/hero1.jpg')
+        }
+        
+        .heroWeek ul li:nth-child(2) {
+            background: url('./static/images/hero2.jpg')
+        }
+        
+        .heroWeek ul li:nth-child(3) {
+            background: url('./static/images/hero3.jpg')
+        }
+        
+        .heroWeek ul li:nth-child(4) {
+            background: url('./static/images/hero4.jpg')
+        }
+        
+        .heroWeek ul li:nth-child(5) {
+            background: url('./static/images/hero5.jpg')
+        }
+        
+        .heroWeek ul li:nth-child(6) {
+            background: url('./static/images/hero2.jpg')
+        }
+        
+        .heroWeek ul li:nth-child(7) {
+            background: url('./static/images/hero6.jpg')
+        }
+        
+        .heroWeek ul li:nth-child(n+2) {
+            width: 108px;
+            background-position: -80px 0;
+            background-repeat: no-repeat;
+        }
+        
+        .dark {
+            width: 200%;
+            background-color: #232731;
+            color: #fff;
+            position: absolute;
+            bottom: 0;
+            opacity: 0.5;
+        }
+        
+        .heroWeek ul li:nth-child(1) .dark {
+            height: 60px;
+        }
+        
+        .heroWeek ul li:nth-child(n+2) .dark {
+            height: 267px;
+        }
+        
+        .darkAnimate {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 18px,
+        }
+        
+        .kongfuNav {
+            background: #F0F0F0;
+            width: 100%;
+            height: 51px;
+            border-top: 6px solid #D7D7D7;
+        }
+        
+        .kongfuNav li {
+            margin-top: -6px;
+        }
+        
+        .videoNav li,
+        .kongfuNav li {
+            width: 108px;
+            height: 50px;
+            float: left;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 50px;
+            border-top: 6px solid #D7D7D7;
+            text-align: center;
+            background: #F0F0F0;
+        }
+        
+        .videoNav span {
+            display: inline-block;
+            width: 212px;
+            height: 50px;
+            border-top: 6px solid #D7D7D7;
+            text-align: center;
+            background: #F0F0F0;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 50px;
+            color: #B7B7B7;
+            cursor: pointer;
+        }
+        
+        .videoNav span:hover {
+            color: #BF6300
+        }
+        
+        .videoContent li {
+            width: 25%;
+            height: 204px;
+            float: left;
+        }
+        
+        .kongfuContent {
+            width: 100%;
+            height: 207px;
+            position: absolute;
+            top: 57px;
+            float: left;
+            box-sizing: border-box;
+            padding: 20px
+        }
+        
+        .kongfuHeader {
+            width: 100%;
+            height: 64px;
+        }
+        
+        .kongfuHeader span {
+            display: block;
+            height: 64px;
+            float: left;
+            margin-left: 20px;
+        }
+        
+        .kongfuHeader img {
+            float: left;
+        }
+        
+        .kongfuList {
+            clear: both;
+            color: #666;
+            font-size: 13px;
+            margin-top: 15px;
+        }
+        
+        .kongfuList li {
+            margin-bottom: 10px;
+        }
+        
+        .banner ul:nth-child(1) {
+            width: 2544px;
+            height: 100%;
+            position: absolute;
+        }
+        
+        .banner>ul li {
+            float: left;
+        }
+        
+        .bannerDot {
+            position: absolute;
+            width: 100%;
+            left: 30px;
+            bottom: 30px;
+        }
+        
+        .bannerDot li {
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #666;
+            float: left;
+            margin-left: 5px;
+        }
+        
+        .qrcode {
+            width: 100%;
+            height: 150px;
+            margin-top: 50px;
+            border-bottom: 6px solid #D0D0D0;
+            position: relative;
+        }
+        
+        .qrcode_left {
+            float: left;
+            height: 152px;
+        }
+        
+        .qrcode_left div,
+        .qrcode_left img {
+            float: left;
+        }
+        
+        .qrcode_left div {
+            height: 152px;
+            width: 192px;
+            margin-left: 20px;
+        }
+        
+        .qrcode_left div p {
+            position: absolute;
+            height: auto;
+            width: 100%;
+            bottom: 5px;
+            color: #666
+        }
+        
+        .qrcode_right {
+            float: right;
+            width: 280px;
+            height: 35px;
+            position: absolute;
+            right: 0;
+            bottom: 30px;
+            border: 4px solid #E8E8E8;
+            line-height: 35px;
+            padding-left: 20px;
+            box-sizing: border-box;
+        }
+        
+        .qrcode_right p {
+            display: block;
+            float: left;
+            width: 90%;
+            height: 100%;
+            line-height: 27px;
+        }
+        
+        .qrcode_right img {
+            display: block;
+            float: right;
+            width: 10%;
+            height: 100%;
+        }
+        
+        .footer {
+            width: 100%;
+            height: 143px;
+            background: #141414;
+            box-sizing: border-box;
+            padding-left: 155px;
+            position: relative;
+        }
+        
+        .foot_left,
+        .foot_right {
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%)
+        }
+        
+        .foot_left {
+            width: 264px;
+            height: 60px;
+            border-right: 1px solid #404040;
+            background: url('./static/images/dh-logo-black.png') no-repeat 0 5px;
+        }
+        
+        .foot_right {
+            width: fit-content;
+            height: fit-content;
+            color: white;
+            margin-left: 290px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header_left">
+            <img src="./static/images/topBar_logo.jpg" alt="">
+        </div>
+        <div class="header_middle">
+            <img src="./static/images/b_20170817090437rse4.jpg" alt="">
+        </div>
+        <div class="header_right">
+            <ul>
+                <li>充值</li>
+                <li>注册</li>
+                <li>账户管理</li>
+                <li>电魂旗舰店</li>
+                <li>|</li>
+                <li>电魂游戏</li>
+            </ul>
+        </div>
+    </div>
+    <div class="leftSide">
+        <div class="leftSideInner">
+            <div class="lf_sanguoLogo">
+                <img src="./static/images/logo.png" alt="">
+            </div>
+            <div class="lf_download">
+                <img src="./static/images/down-btn.jpg" alt="">
+            </div>
+            <ul class="lf_fourBtn">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul class="lf_list">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div class="lf_ourlogo">
+                <ul>
+                    <li style="background:url('./static/images/slide-sprite.png') -372px 0 no-repeat">
+                        <p>梦三YY</p>
+                    </li>
+                    <li style="background:url('./static/images/slide-sprite.png') -372px -45px no-repeat">
+                        <p>口袋梦三</p>
+                    </li>
+                    <li style="background:url('./static/images/slide-sprite.png') -372px -90px no-repeat">
+                        <p>电魂天猫</p>
+                    </li>
+                    <li style="background:url('./static/images/slide-sprite.png') -372px -135px no-repeat">
+                        <p>官方微信</p>
+                    </li>
+                    <li style="background:url('./static/images/slide-sprite.png') -372px -180px no-repeat">
+                        <p>腾讯微博</p>
+                    </li>
+                    <li style="background:url('./static/images/slide-sprite.png') -372px -225px no-repeat">
+                        <p>新浪微博</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="lf_serviceCenter">
+                <p>0571-56690669</p>
+                <ul>
+                    <li>账号管理</li>
+                    <li>安全解绑</li>
+                    <li>密码找回</li>
+                    <li>更改邮箱</li>
+                    <li>密保手机</li>
+                    <li>微信服务</li>
+                </ul>
+                <span>进入客服中心</span>
+            </div>
+        </div>
+    </div>
+    <div class="wrap">
+        <div class="newsWrap">
+            <div class="news">
+                <div class="icon" style="background:url('./static/images/index-tl.png') 0 -40px no-repeat">
+
+                </div>
+            </div>
+            <div class="banner">
+                <ul>
+                    <li><img src="./static/images/ban1.jpg" alt=""></li>
+                    <li><img src="./static/images/ban2.jpg" alt=""></li>
+                    <li><img src="./static/images/ban3.jpg" alt=""></li>
+                    <li><img src="./static/images/ban4.jpg" alt=""></li>
+                    <li><img src="./static/images/ban5.jpg" alt=""></li>
+                </ul>
+                <ul class="bannerDot">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        <div class="hotEventsWrap">
+            <div class="hotEvents">
+                <div class="icon" style="background:url('./static/images/index-tl.png') 0 -40px no-repeat">
+
+                </div>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="eyes">
+                <div class="icon" style="background:url('./static/images/index-tl.png')  0 -200px no-repeat">
+
+                </div>
+                <ul>
+                    <li>
+                        <div class="line">
+
+                        </div>
+                        <div class="dot">
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="line">
+
+                        </div>
+                        <div class="dot">
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="line">
+
+                        </div>
+                        <div class="dot">
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="line">
+
+                        </div>
+                        <div class="dot">
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="kongfuWrap">
+            <div class="kongfu">
+                <div class="icon" style="background:url('./static/images/index-tl.png') 0 -160px no-repeat">
+
+                </div>
+                <ul class="kongfuNav">
+                    <li>竞技对战</li>
+                    <li>关卡副本</li>
+                </ul>
+                <div class="kongfuContent">
+                    <div class="kongfuHeader">
+                        <img src="./static/images/kf1.jpg" alt="" width="64px" height="64px">
+                        <span>
+                            <p style="font-size:20px;font-weight:bold;color:#00A39A">匹配英雄推荐</p>
+                            <p style="color:#666;font-size:14px;margin-top:5px">事件8-10</p>
+                            <p style="color:#666;font-size:14px">来源:A</p>
+                        </span>
+                    </div>
+                    <ul class="kongfuList">
+                        <li>【攻略心得】娱乐攻略 茕茕白兔萝莉</li>
+                        <li>【攻略心得】2017封魔 血色婚宴攻略</li>
+                        <li>【攻略心得】幻洞过麒麟 梦张昭打法小技巧</li>
+                        <li>【攻略心得】出征攻略 天籁灵音</li>
+                    </ul>
+                </div>
+                <div class="kongfuContent" style="display:none">
+                    <div class="kongfuHeader">
+                        <img src="./static/images/kf2.jpg" alt="" width="64px" height="64px">
+                        <span>
+                            <p style="font-size:20px;font-weight:bold;color:#00A39A">关卡副本全攻略持续更新</p>
+                            <p style="color:#666;font-size:14px;margin-top:5px">事件8-10</p>
+                            <p style="color:#666;font-size:14px">来源:A</p>
+                        </span>
+                    </div>
+                    <ul class="kongfuList">
+                        <li>【攻略心得】娱乐攻略 茕茕白兔萝莉</li>
+                        <li>【攻略心得】2017封魔 血色婚宴攻略</li>
+                        <li>【攻略心得】幻洞过麒麟 梦张昭打法小技巧</li>
+                        <li>【攻略心得】出征攻略 天籁灵音</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="more1">
+
+            </div>
+            <div class="more2">
+
+            </div>
+        </div>
+        <div class="videoCenter">
+            <div class="icon" style="background:url('./static/images/index-tl.png') 0 -80px no-repeat">
+
+            </div>
+            <ul class="videoNav">
+                <li>赛事视频</li>
+                <li>解说视频</li>
+                <li>无双竞技</li>
+                <li>关卡副本</li>
+                <li>趣味集锦</li>
+                <li>官方视频</li>
+                <span>我要投稿</span>
+            </ul>
+            <ul class="videoContent">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+        </div>
+        <div class="heroWeek">
+            <div class="icon" style="background:url('./static/images/index-tl.png') 0 -120px no-repeat">
+
+            </div>
+            <ul>
+                <li>
+                    <div class="dark">
+
+                    </div>
+                </li>
+                <li>
+                    <div class="dark">
+
+                    </div>
+                </li>
+                <li>
+                    <div class="dark">
+
+                    </div>
+                </li>
+                <li>
+                    <div class="dark">
+
+                    </div>
+                </li>
+                <li>
+                    <div class="dark">
+
+                    </div>
+                </li>
+                <li>
+                    <div class="dark">
+
+                    </div>
+                </li>
+                <li>
+                    <div class="dark">
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="qrcode">
+            <div class="qrcode_left">
+                <img src="./static/images/koudai.png" alt="">
+                <div>
+                    <p>口袋梦三国</br>
+                        扫描下载《口袋梦三国》官方APP</br>
+                        获取最新活动动态 海量福利拿回家</p>
+                </div>
+            </div>
+            <div class="qrcode_right">
+                <p>梦三国 官方合作媒体</p>
+                <img src="./static/images/向下.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <div class="footer">
+        <div class="foot_left">
+
+        </div>
+        <div class="foot_right">
+            <p>
+                杭州电魂网络科技股份有限公司版权所有丨2008-2016 Electronic Soul - All rights reserved<br/> 增值电信业务经营许可证：浙B2-20090296　网络文化经营许可证：浙网文【2012】0804-079号
+                <br/> 出版号：新广出审［2015］321号丨备案号：文网游备字〔2016〕Ｃ-CSG 1237 号<br/> 互联网出版许可证编号：新出网证（浙）45号
+                <br/> 抵制不良游戏, 拒绝盗版游戏。 注意自我保护, 谨防受骗上当。 适度游戏益脑, 沉迷游戏伤身。 合理安排时间, 享受健康生活。</p>
+        </div>
+    </div>
+    <script type="text/javascript" src="./static/js/animate.js">
+    </script>
+</body>
+
+</html>
